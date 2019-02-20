@@ -1,0 +1,32 @@
+{
+    "name": "mmerlijn/nova-rrule-field",
+    "version": "1.0",
+    "description": "A Laravel Nova rrule field.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "rrule",
+        "field"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mmerlijn\\Rrule\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mmerlijn\\Rrule\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
