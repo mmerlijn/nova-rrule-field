@@ -2,7 +2,7 @@
 
 This package contains a Nova field to make iCal recurring rules.
 
-![screenshot of the tags field](https://mmerlijn.github.io/nova-rrule-field/screenshot.png)
+![screenshot of the tags field](https://raw.githubusercontent.com/mmerlijn/nova-rrule-field/master/screenshot.png)
 
 ## Requirements
 
