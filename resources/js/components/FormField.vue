@@ -70,10 +70,10 @@
                 ></tag-selector>
 
                 <div class="flex-row">
-                    <button @click.prevent="stop_='repeat'" class="bg-primary m-3 p-2 rounded min-w-8">Repeat</button>
-                    <button @click.prevent="stop_='until'" class="bg-primary m-3 p-2 rounded min-w-8">Until</button>
+                    <button @click.prevent="stop_='repeat'" class="bg-primary m-3 p-2 rounded min-w-8">{{translate(commands.repeat)}}</button>
+                    <button @click.prevent="stop_='until'" class="bg-primary m-3 p-2 rounded min-w-8">{{translate(commands.until)}}</button>
                     <button @click.prevent="stop_='occurrence'" class="bg-primary m-3 p-2 rounded min-w-8">
-                        Occurrence(s)
+                        {{translate(commands.occurrence)}}
                     </button>
                 </div>
                 <input type="date" v-model="until_" class="form-control form-input-bordered form-input mb-3"
@@ -106,7 +106,10 @@
                 commands:
                     {
                         add_month: {nl: "Maand toevoegen...", en: "Add a month..."},
-                        add_day: {nl: "Dag toevoegen...", en: "Add a day..."}
+                        add_day: {nl: "Dag toevoegen...", en: "Add a day..."},
+                        repeat: {nl: "Herhaal",en:'repeat'},
+                        until: {nl:'Tot',en:'Until'},
+                        occurrence: {nl:'Aantal herhalingen',en:'Occurrence(s)'}
                     }
                 ,
                 freqs:
