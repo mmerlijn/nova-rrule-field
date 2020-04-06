@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mb-4">
         <strong>{{translate('day')}}</strong><br>
 
         <label for="MO"><input id="MO" type="checkbox" v-model="day_MO" @change="setValue"><span

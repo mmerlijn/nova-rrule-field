@@ -3,7 +3,7 @@
         <select v-model="every" @change="setValue"
                 class="form-control form-select form-input-bordered mb-3">
             <option v-for="weekly in dict" :value="weekly.value">{{translate(weekly.value)}}</option>
-        </select> {{value}}
+        </select>
     </div>
 </template>
 
