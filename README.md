@@ -42,8 +42,6 @@ If you discover any security related issues, please email menno@mmerlijn.nl inst
 
 - [Menno Merlijn](https://github.com/mmerlijn)
 
-The vue component is based on [iCalendar.org](https://icalendar.org/rrule-tool.html)
-The used tag input field is based on [voerro/vue-tagsinput](https://voerro.github.io/vue-tagsinput/)
 
 
 ## License
