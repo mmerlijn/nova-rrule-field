@@ -1,13 +1,11 @@
 <template>
     <div>
         <every-day-selector :value.sync="everyDayString" :locale="locale"></every-day-selector>
-        <end-selector :value.sync="endString" :locale="locale"></end-selector>
     </div>
 </template>
 
 <script>
     import EveryDaySelector from "./EveryDaySelector";
-    import EndSelector from "./EndSelector";
     export default {
         name: "DailyForm",
         props: {
@@ -28,13 +26,11 @@
         data() {
             return {
                 everyDayString: "INTERVAL=2",
-                endString: '',
             }
 
         },
         components: {
             'every-day-selector': EveryDaySelector,
-            'end-selector': EndSelector,
         },
         watch: {
             value: function (newValue, oldValue) {
@@ -43,9 +39,6 @@
             everyDayString: function () {
                 this.setValue();
             },
-            endString: function(){
-                this.setValue();
-            }
         },
         created: function () {
             this.setForm();
@@ -63,15 +56,11 @@
                         case 'INTERVAL':
                             self.everyDayString= val;
                             break;
-                        case 'UNTIL':
-                            self.endString = val;
-                            break;
-
                     }
                 });
             },
             setValue() {
-                this.value = 'FREQ=DAILY;'+this.everyDayString+';'+this.endString;
+                this.value = 'FREQ=DAILY;'+this.everyDayString;
                 this.$emit('update:value', this.value);
             }
         }

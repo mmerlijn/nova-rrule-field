@@ -2,12 +2,10 @@
     <div>
         <day-selector :value.sync="dayString" :locale="locale"></day-selector>
         <every-week-selector :value.sync="everyWeekString" :locale="locale"></every-week-selector>
-        <end-selector :value.sync="endString" :locale="locale"></end-selector>
     </div>
 </template>
 
 <script>
-    import EndSelector from "./EndSelector";
     import DaySelector from "./DaySelector";
     import EveryWeekSelector from "./EveryWeekSelector";
     export default {
@@ -31,14 +29,12 @@
             return {
                 dayString: 'BYDAY=MO,TU,WE,TH,FR',
                 everyWeekString: "INTERVAL=1",
-                endString: '',
             }
 
         },
         components: {
             'every-week-selector': EveryWeekSelector,
             'day-selector': DaySelector,
-            'end-selector': EndSelector,
         },
         watch: {
             value: function (newValue, oldValue) {
@@ -50,9 +46,6 @@
             everyWeekString: function(){
                 this.setValue();
             },
-            endString: function(){
-                this.setValue();
-            }
         },
         created: function () {
             this.setForm();
@@ -73,15 +66,11 @@
                         case 'BYDAY':
                             self.dayString = val;
                             break;
-                        case 'UNTIL':
-                            self.endString = val;
-                            break;
-
                     }
                 });
             },
             setValue() {
-                this.value = ('FREQ=WEEKLY;'+this.everyWeekString+';'+this.dayString+';'+this.endString).replace(/;+$/g, '');
+                this.value = ('FREQ=WEEKLY;'+this.everyWeekString+';'+this.dayString).replace(/;+$/g, '');
                 this.$emit('update:value', this.value);
             }
         }

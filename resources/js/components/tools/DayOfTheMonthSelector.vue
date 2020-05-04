@@ -46,8 +46,6 @@
                 </td>
             </tr>
         </table>
-
-
     </div>
 </template>
 
@@ -93,8 +91,8 @@
             setForm() {
                 self = this;
                 let params = this.value.split('=')[1].split(',');
-                this.days= [false, false, false, false, false, false, false, false, false, false, false, false, false,false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
-                    params.forEach(function (value) {
+                this.days= [false, false, false, false, false, false, false, false, false, false, false, false, false,false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
+                params.forEach(function (value) {
                     self.days[value] = true;
                 });
             },

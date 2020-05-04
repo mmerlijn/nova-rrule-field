@@ -4,13 +4,11 @@
         <week-no-selector :value.sync="weeknoString" :locale="locale"></week-no-selector>
         <day-selector  :value.sync="dayString"
                                     :locale="locale"></day-selector>
-        <end-selector :value.sync="endString" :locale="locale"></end-selector>
     </div>
 </template>
 
 <script>
     import EveryYearSelector from "./EveryYearSelector";
-    import EndSelector from "./EndSelector";
     import WeekNoSelector from "./WeekNoSelector";
     import DaySelector from "./DaySelector";
     export default {
@@ -35,7 +33,6 @@
                 everyYearString: 'INTERVAL=1',
                 weeknoString: "BYWEEKNO=1",
                 dayString: 'BYDAY=MO',
-                endString: '',
             }
 
         },
@@ -43,7 +40,6 @@
             WeekNoSelector,
             DaySelector,
             'every-year-selector': EveryYearSelector,
-            'end-selector': EndSelector,
         },
         watch: {
             value: function (newValue, oldValue) {
@@ -58,9 +54,6 @@
             dayString: function(){
                 this.setValue();
             },
-            endString: function(){
-                this.setValue();
-            }
         },
         created: function () {
             this.setForm();
@@ -84,15 +77,11 @@
                         case 'BYDAY':
                             self.dayString = val;
                             break;
-                        case 'UNTIL':
-                            self.endString = val;
-                            break;
-
                     }
                 });
             },
             setValue() {
-                this.value = ('FREQ=YEARLY;'+this.everyYearString+';'+this.weeknoString+';'+this.dayString+';'+this.endString).replace(/;+$/g, '');
+                this.value = ('FREQ=YEARLY;'+this.everyYearString+';'+this.weeknoString+';'+this.dayString).replace(/;+$/g, '');
                 this.$emit('update:value', this.value);
             }
         }

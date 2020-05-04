@@ -3,7 +3,6 @@
         <every-year-selector :value.sync="everyYearString" :locale="locale"></every-year-selector>
         <month-selector :value.sync="monthString" :locale="locale"></month-selector>
         <by-day-selector :value.sync="bydayString" :locale="locale"></by-day-selector>
-        <end-selector :value.sync="endString" :locale="locale"></end-selector>
     </div>
 </template>
 
@@ -11,7 +10,6 @@
     import EveryYearSelector from "./EveryYearSelector";
     import MonthSelector from "./MonthSelector";
     import ByDaySelector from "./ByDaySelector";
-    import EndSelector from "./EndSelector";
     export default {
         name: "MonthlyByDayForm",
         props: {
@@ -34,7 +32,6 @@
                 monthString: "BYMONTH=1",
                 everyYearString: "INTERVAL=1",
                 bydayString: 'BYDAY=1MO',
-                endString: '',
             }
 
         },
@@ -42,7 +39,7 @@
             'by-day-selector': ByDaySelector,
             'month-selector': MonthSelector,
             'every-year-selector':EveryYearSelector,
-            'end-selector': EndSelector,
+
         },
         watch: {
             value: function (newValue, oldValue) {
@@ -57,9 +54,6 @@
             bydayString: function(){
               this.setValue();
             },
-            endString: function(){
-                this.setValue();
-            }
         },
         created: function () {
             this.setForm();
@@ -77,18 +71,17 @@
                         case 'INTERVAL':
                             self.everyYearString= val;
                             break;
+                        case 'BYMONTH':
+                            self.monthString = val;
+                            break;
                         case 'BYDAY':
                             self.bydayString = val;
                             break;
-                        case 'UNTIL':
-                            self.endString = val;
-                            break;
-
                     }
                 });
             },
             setValue() {
-                this.value = ('FREQ=YEARLY;'+this.everyYearString+';'+this.monthString+';'+this.bydayString+';'+this.endString).replace(/;+$/g, '');
+                this.value = ('FREQ=YEARLY;'+this.everyYearString+';'+this.monthString+';'+this.bydayString).replace(/;+$/g, '');
                 this.$emit('update:value', this.value);
             }
         }

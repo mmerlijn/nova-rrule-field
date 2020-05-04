@@ -4,7 +4,7 @@
             <div class="flex mx-auto px-2 flex-col">
                 <select v-model="frequency"
                         class="form-control form-select form-input-bordered mb-3"
-                        @change="setValue"
+                        @change="changeFrequency"
                 >
                     <option v-for="freq in dict" :value="freq.id">{{translate(freq.id)}}</option>
                 </select>
@@ -19,7 +19,7 @@
                 <yearly-by-day-form v-if="frequency==5" :value.sync="valString" :locale="field.locale" ></yearly-by-day-form>
                 <yearly-by-date-form v-if="frequency==6" :value.sync="valString" :locale="field.locale" ></yearly-by-date-form>
                 <yearly-by-week-no-form v-if="frequency==7" :value.sync="valString" :locale="field.locale" ></yearly-by-week-no-form>
-
+                <end-selector :value.sync="endString" :locale="field.locale"></end-selector>
                 <input v-show="!hide"
                        :id="field.name"
                        type="text"
@@ -43,14 +43,16 @@
     import YearlyByDateForm from "./tools/YearlyByDateForm";
     import YearlyByDayForm from "./tools/YearlyByDayForm";
     import YearlyByWeekNoForm from "./tools/YearlyByWeekNoForm";
-
+    import EndSelector from "./tools/EndSelector";
     export default {
         mixins: [FormField, HandlesValidationErrors],
         props: ['resourceName', 'resourceId', 'field','errors'],
         data() {
             return {
+                original:'',
                 frequency: 1,
                 valString: '',
+                endString:'',
 
                 dict:
                     [
@@ -72,10 +74,22 @@
             'yearly-by-date-form': YearlyByDateForm,
             'yearly-by-day-form': YearlyByDayForm,
             'yearly-by-week-no-form': YearlyByWeekNoForm,
+            'end-selector': EndSelector,
         },
         watch: {
-            frequency: function (newValue, oldValue) {
-                switch(newValue){
+            valString: function(){
+                this.setValue();
+            },
+            endString: function(){
+                this.setValue();
+            }
+        },
+        methods: {
+            translate: function (field_) {
+                return this.dict.find(x => x.id == field_)[this.field.locale];
+            },
+            changeFrequency(){
+                switch(this.frequency){
                     case 1: this.value='FREQ=DAILY;INTERVAL=1;'; break;
                     case 2: this.value='FREQ=WEEKLY;INTERVAL=1;BYDAY=MO,TU,WE,TH,FR';break;
                     case 3: this.value='FREQ=MONTHLY;INTERVAL=1;BYDAY=1MO';break;
@@ -86,17 +100,7 @@
                 }
                 this.setForm();
             },
-            valString: function(){
-                this.setValue();
-            }
-
-        },
-        methods: {
-            translate: function (field_) {
-                return this.dict.find(x => x.id == field_)[this.field.locale];
-            },
             setForm() {
-                this.test = this.value.split(";")[0].split('=')[1];
                 switch (this.value.split(";")[0].split('=')[1]) {
                     case 'DAILY':
                         this.frequency = 1;
@@ -105,13 +109,11 @@
                         this.frequency = 2;
                         break;
                     case 'MONTHLY':
-                        console.log(this.frequency);
                         if(this.value.match(/BYMONTHDAY/g)){
                             this.frequency = 4;
                         }else{
                             this.frequency = 3;
                         }
-                        console.log(this.frequency);
                         break;
                     case 'YEARLY':
                         if(this.value.match(/BYMONTHDAY/g)){
@@ -123,10 +125,23 @@
                         }
                         break;
                 }
+                let params = this.value.split(';');
+                self = this;
+                params.forEach(function(val){
+
+                    switch(val.split('=')[0]){
+                        case 'UNTIL':
+                            self.endString = val;
+                            break;
+                        case 'COUNT':
+                            self.endString = val;
+                            break;
+                    }
+                });
                 this.valString = this.value;
             },
             setValue() {
-                this.value = this.valString;
+                this.value = this.valString+';'+this.endString;
             }
             ,
             /*
@@ -134,6 +149,7 @@
              */
             setInitialValue() {
                 this.value = this.field.value || 'FREQ=WEEKLY;INTERVAL=1;BYDAY=MO,TU,WE,TH,FR';
+                this.original = this.value;
                 if (!this.field.locale) {
                     this.field.locale = 'en';
                 }

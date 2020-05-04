@@ -38,8 +38,6 @@
                 </td>
             </tr>
         </table>
-
-
     </div>
 </template>
 
