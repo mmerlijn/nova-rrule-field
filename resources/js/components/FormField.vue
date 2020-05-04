@@ -8,12 +8,8 @@
                 >
                     <option v-for="freq in dict" :value="freq.id">{{translate(freq.id)}}</option>
                 </select>
-
-
                 <daily-form v-if="frequency==1" :value.sync="valString" :locale="field.locale" ></daily-form>
-
                 <weekly-form v-if="frequency==2" :value.sync="valString" :locale="field.locale" ></weekly-form>
-
                 <monthly-by-day-form v-if="frequency==3" :value.sync="valString" :locale="field.locale" ></monthly-by-day-form>
                 <monthly-by-date-form v-if="frequency==4" :value.sync="valString" :locale="field.locale" ></monthly-by-date-form>
                 <yearly-by-day-form v-if="frequency==5" :value.sync="valString" :locale="field.locale" ></yearly-by-day-form>
