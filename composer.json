@@ -1,6 +1,5 @@
 {
     "name": "mmerlijn/nova-rrule-field",
-    "version": "1.0",
     "description": "A Laravel Nova rrule field.",
     "keywords": [
         "laravel",
