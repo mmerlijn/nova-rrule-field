@@ -1,0 +1,31 @@
+{
+    "name": "mmerlijn/nova-rrule-field",
+    "description": "A Laravel Nova iCal rrule field.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "rrule",
+        "field"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mmerlijn\\NovaRruleField\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mmerlijn\\NovaRruleField\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
