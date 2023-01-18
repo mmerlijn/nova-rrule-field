@@ -1,6 +1,6 @@
 <?php
 
-namespace Mmerlijn\NovaRruleField;
+namespace mmerlijn\NovaRruleField;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;

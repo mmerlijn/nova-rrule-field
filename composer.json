@@ -13,13 +13,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Mmerlijn\\NovaRruleField\\": "src/"
+            "mmerlijn\\NovaRruleField\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Mmerlijn\\NovaRruleField\\FieldServiceProvider"
+                "mmerlijn\\NovaRruleField\\FieldServiceProvider"
             ]
         }
     },

@@ -1,6 +1,6 @@
 <?php
 
-namespace Mmerlijn\NovaRruleField;
+namespace mmerlijn\NovaRruleField;
 
 use Laravel\Nova\Fields\Field;
 
