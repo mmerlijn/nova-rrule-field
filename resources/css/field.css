@@ -6,9 +6,7 @@
 .ml-2 {
     margin-left: 0.5rem;
 }
-.ml-3 {
-    margin-left: 0.75rem;
-}
+
 .mb-4 {
     margin-bottom: 1rem;
 }
@@ -16,14 +14,17 @@
 .mr-6 {
     margin-right: 1.5rem;
 }
-.mr-8 {
-    margin-right: 2rem;
+
+.p-1 {
+    padding: 0.25rem;
 }
 
 .p-2 {
     padding: 0.5rem;
 }
-
+.pl-3{
+    padding: 0.75rem;
+}
 .border {
     border-width: 1px;
 }
@@ -50,4 +51,8 @@
 
 .bg-red-50 {
     background-color: #fef2f2;
+}
+
+.w-16 {
+    width: 4rem;
 }

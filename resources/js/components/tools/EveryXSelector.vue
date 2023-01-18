@@ -1,9 +1,9 @@
 <template>
-    <div :class="['m-2 p-2 border border-1 rounded',error?'border-red-600  bg-red-100':'border-gray-300']">
+    <div :class="['m-2 p-2 border border-1 rounded',error?'border-red-600  bg-red-50':'border-gray-300']">
         <div class="flex gap-1 items-center mb-3">
-            <span>{{ translate('every') }}</span>
-            <input type="number" min="1" v-model="every" class="form-control form-input form-input-bordered w-20 text-sm p-1"
-                   @input="setValue"><span>{{ translate(props.period) }}</span>
+            <span class="p-2">{{ translate('every') }}</span>
+            <input type="number" min="1" v-model="every" class="form-control form-input form-input-bordered w-16 text-sm pl-3"
+                   @input="setValue"><span class="p-2">{{ translate(props.period) }}</span>
         </div>
     </div>
 </template>

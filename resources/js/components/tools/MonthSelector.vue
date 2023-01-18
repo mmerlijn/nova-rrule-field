@@ -1,40 +1,40 @@
 <template>
-    <div :class="['m-2 p-2 border border-1 rounded',error?'border-red-600  bg-red-100':'border-gray-300']">
+    <div :class="['m-2 p-2 border border-1 rounded',error?'border-red-600  bg-red-50':'border-gray-300']">
         <strong>{{ translate(13) }}</strong>
         <table>
             <tr>
                 <td>
                     <label for="JAN"><input id="JAN" type="checkbox" v-model="month[1]" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate(1) }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate(1) }}</span></label><br>
                     <label for="FEB"><input id="FEB" type="checkbox" v-model="month[2]" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate(2) }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate(2) }}</span></label><br>
                     <label for="MAA"><input id="MAA" type="checkbox" v-model="month[3]" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate(3) }}</span></label>
+                        class="text-sm ml-2 mr-6">{{ translate(3) }}</span></label>
                 </td>
                 <td>
                     <label for="APR"><input id="APR" type="checkbox" v-model="month[4]" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate(4) }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate(4) }}</span></label><br>
                     <label for="MAY"><input id="MAY" type="checkbox" v-model="month[5]" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate(5) }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate(5) }}</span></label><br>
                     <label for="JUN"><input id="JUN" type="checkbox" v-model="month[6]" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate(6) }}</span></label>
+                        class="text-sm ml-2 mr-6">{{ translate(6) }}</span></label>
 
                 </td>
                 <td>
                     <label for="JUL"><input id="JUL" type="checkbox" v-model="month[7]" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate(7) }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate(7) }}</span></label><br>
                     <label for="AUG"><input id="AUG" type="checkbox" v-model="month[8]" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate(8) }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate(8) }}</span></label><br>
                     <label for="SEP"><input id="SEP" type="checkbox" v-model="month[9]" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate(9) }}</span></label>
+                        class="text-sm ml-2 mr-6">{{ translate(9) }}</span></label>
                 </td>
                 <td>
                     <label for="OCT"><input id="OCT" type="checkbox" v-model="month[10]" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate(10) }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate(10) }}</span></label><br>
                     <label for="NOV"><input id="NOV" type="checkbox" v-model="month[11]" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate(11) }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate(11) }}</span></label><br>
                     <label for="DEC"><input id="DEC" type="checkbox" v-model="month[12]" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate(12) }}</span></label>
+                        class="text-sm ml-2 mr-6">{{ translate(12) }}</span></label>
                 </td>
             </tr>
         </table>

@@ -1,103 +1,103 @@
 <template>
-    <div :class="['m-2 p-2 border border-1 rounded',error?'border-red-600  bg-red-100':'border-gray-300']">
+    <div :class="['m-2 p-2 border border-1 rounded',error?'border-red-600  bg-red-50':'border-gray-300']">
         <strong>{{ translate('day') }}</strong><br>
         <table>
             <tr>
                 <td>
                     <label for="MO1"><input id="MO1" type="checkbox" v-model="byday.MO1" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('1MO') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('1MO') }}</span></label><br>
                     <label for="TU1"><input id="TU1" type="checkbox" v-model="byday.TU1" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('1TU') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('1TU') }}</span></label><br>
                     <label for="WE1"><input id="WE1" type="checkbox" v-model="byday.WE1" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('1WE') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('1WE') }}</span></label><br>
                     <label for="TH1"><input id="TH1" type="checkbox" v-model="byday.TH1" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('1TH') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('1TH') }}</span></label><br>
                     <label for="FR1"><input id="FR1" type="checkbox" v-model="byday.FR1" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('1FR') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('1FR') }}</span></label><br>
                     <label for="SA1"><input id="SA1" type="checkbox" v-model="byday.SA1" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('1SA') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('1SA') }}</span></label><br>
                     <label for="SU1"><input id="SU1" type="checkbox" v-model="byday.SU1" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('1SU') }}</span></label>
+                        class="text-sm ml-2 mr-6">{{ translate('1SU') }}</span></label>
                 </td>
                 <td>
                     <label for="MO2"><input id="MO2" type="checkbox" v-model="byday.MO2" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('2MO') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('2MO') }}</span></label><br>
                     <label for="TU2"><input id="TU2" type="checkbox" v-model="byday.TU2" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('2TU') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('2TU') }}</span></label><br>
                     <label for="WE2"><input id="WE2" type="checkbox" v-model="byday.WE2" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('2WE') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('2WE') }}</span></label><br>
                     <label for="TH2"><input id="TH2" type="checkbox" v-model="byday.TH2" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('2TH') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('2TH') }}</span></label><br>
                     <label for="FR2"><input id="FR2" type="checkbox" v-model="byday.FR2" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('2FR') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('2FR') }}</span></label><br>
                     <label for="SA2"><input id="SA2" type="checkbox" v-model="byday.SA2" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('2SA') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('2SA') }}</span></label><br>
                     <label for="SU2"><input id="SU2" type="checkbox" v-model="byday.SU2" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('2SU') }}</span></label>
+                        class="text-sm ml-2 mr-6">{{ translate('2SU') }}</span></label>
                 </td>
                 <td>
                     <label for="MO3"><input id="MO3" type="checkbox" v-model="byday.MO3" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('3MO') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('3MO') }}</span></label><br>
                     <label for="TU3"><input id="TU3" type="checkbox" v-model="byday.TU3" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('3TU') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('3TU') }}</span></label><br>
                     <label for="WE3"><input id="WE3" type="checkbox" v-model="byday.WE3" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('3WE') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('3WE') }}</span></label><br>
                     <label for="TH3"><input id="TH3" type="checkbox" v-model="byday.TH3" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('3TH') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('3TH') }}</span></label><br>
                     <label for="FR3"><input id="FR3" type="checkbox" v-model="byday.FR3" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('3FR') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('3FR') }}</span></label><br>
                     <label for="SA3"><input id="SA3" type="checkbox" v-model="byday.SA3" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('3SA') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('3SA') }}</span></label><br>
                     <label for="SU3"><input id="SU3" type="checkbox" v-model="byday.SU3" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('3SU') }}</span></label>
+                        class="text-sm ml-2 mr-6">{{ translate('3SU') }}</span></label>
                 </td>
                 <td>
                     <label for="MO4"><input id="MO4" type="checkbox" v-model="byday.MO4" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('4MO') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('4MO') }}</span></label><br>
                     <label for="TU4"><input id="TU4" type="checkbox" v-model="byday.TU4" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('4TU') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('4TU') }}</span></label><br>
                     <label for="WE4"><input id="WE4" type="checkbox" v-model="byday.WE4" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('4WE') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('4WE') }}</span></label><br>
                     <label for="TH4"><input id="TH4" type="checkbox" v-model="byday.TH4" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('4TH') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('4TH') }}</span></label><br>
                     <label for="FR4"><input id="FR4" type="checkbox" v-model="byday.FR4" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('4FR') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('4FR') }}</span></label><br>
                     <label for="SA4"><input id="SA4" type="checkbox" v-model="byday.SA4" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('4SA') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('4SA') }}</span></label><br>
                     <label for="SU4"><input id="SU4" type="checkbox" v-model="byday.SU4" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('4SU') }}</span></label>
+                        class="text-sm ml-2 mr-6">{{ translate('4SU') }}</span></label>
                 </td>
                 <td>
                     <label for="MO5"><input id="MO5" type="checkbox" v-model="byday.MO5" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('5MO') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('5MO') }}</span></label><br>
                     <label for="TU5"><input id="TU5" type="checkbox" v-model="byday.TU5" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('5TU') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('5TU') }}</span></label><br>
                     <label for="WE5"><input id="WE5" type="checkbox" v-model="byday.WE5" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('5WE') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('5WE') }}</span></label><br>
                     <label for="TH5"><input id="TH5" type="checkbox" v-model="byday.TH5" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('5TH') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('5TH') }}</span></label><br>
                     <label for="FR5"><input id="FR5" type="checkbox" v-model="byday.FR5" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('5FR') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('5FR') }}</span></label><br>
                     <label for="SA5"><input id="SA5" type="checkbox" v-model="byday.SA5" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('5SA') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('5SA') }}</span></label><br>
                     <label for="SU5"><input id="SU5" type="checkbox" v-model="byday.SU5" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('5SU') }}</span></label>
+                        class="text-sm ml-2 mr-6">{{ translate('5SU') }}</span></label>
                 </td>
                 <td>
                     <label for="MO_1"><input id="MO_1" type="checkbox" v-model="byday.MO_1" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('-1MO') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('-1MO') }}</span></label><br>
                     <label for="TU_1"><input id="TU_1" type="checkbox" v-model="byday.TU_1" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('-1TU') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('-1TU') }}</span></label><br>
                     <label for="WE_1"><input id="WE_1" type="checkbox" v-model="byday.WE_1" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('-1WE') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('-1WE') }}</span></label><br>
                     <label for="TH_1"><input id="TH_1" type="checkbox" v-model="byday.TH_1" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('-1TH') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('-1TH') }}</span></label><br>
                     <label for="FR_1"><input id="FR_1" type="checkbox" v-model="byday.FR_1" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('-1FR') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('-1FR') }}</span></label><br>
                     <label for="SA_1"><input id="SA_1" type="checkbox" v-model="byday.SA_1" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('-1SA') }}</span></label><br>
+                        class="text-sm ml-2 mr-6">{{ translate('-1SA') }}</span></label><br>
                     <label for="SU_1"><input id="SU_1" type="checkbox" v-model="byday.SU_1" @change="setValue" class="checkbox"><span
-                        class="text-sm ml-3 mr-8">{{ translate('-1SU') }}</span></label>
+                        class="text-sm ml-2 mr-6">{{ translate('-1SU') }}</span></label>
                 </td>
             </tr>
         </table>

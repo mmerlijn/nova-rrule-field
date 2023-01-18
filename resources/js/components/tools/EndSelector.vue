@@ -1,18 +1,18 @@
 <template>
-    <div :class="['m-2 mb-4 p-2 border border-1 rounded',error?'border-red-600  bg-red-100':'border-gray-300']">
-        <div class="flex gap-2">
+    <div :class="['m-2 mb-4 p-2 border border-1 rounded',error?'border-red-600  bg-red-50':'border-gray-300']">
+        <div class="flex gap-2 mb-3">
             <button @click.prevent="buttonClick('repeat')" type="button" class="shadow relative bg-primary-500 hover:bg-primary-400 text-white dark:text-gray-900 cursor-pointer rounded text-sm font-bold focus:outline-none focus:ring ring-primary-200 dark:ring-gray-600 inline-flex items-center justify-center h-9 px-3 shadow relative bg-primary-500 hover:bg-primary-400 text-white dark:text-gray-900">
                 {{ translate('repeat') }}
             </button>
             <button @click.prevent="buttonClick('until')" type="button" class="shadow relative bg-primary-500 hover:bg-primary-400 text-white dark:text-gray-900 cursor-pointer rounded text-sm font-bold focus:outline-none focus:ring ring-primary-200 dark:ring-gray-600 inline-flex items-center justify-center h-9 px-3 shadow relative bg-primary-500 hover:bg-primary-400 text-white dark:text-gray-900">
                 {{ translate('until') }}
             </button>
-            <input type="date" v-model="until" class="form-control form-input form-input-bordered mb-3"
+            <input type="date" v-model="until" class="form-control form-input form-input-bordered"
                    v-if="end==='until'" @input="setValue">
             <button @click.prevent="buttonClick('occurrence')" type="button" class="shadow relative bg-primary-500 hover:bg-primary-400 text-white dark:text-gray-900 cursor-pointer rounded text-sm font-bold focus:outline-none focus:ring ring-primary-200 dark:ring-gray-600 inline-flex items-center justify-center h-9 px-3 shadow relative bg-primary-500 hover:bg-primary-400 text-white dark:text-gray-900">
                 {{ translate('occurrence') }}
             </button>
-            <input type="number" min="1" v-model="occurrence" class="form-control form-input form-input-bordered mb-3 w-20"
+            <input type="number" min="1" v-model="occurrence" class="form-control form-input form-input-bordered w-16"
                    v-if="end==='occurrence'" @input="setValue">
         </div>
 

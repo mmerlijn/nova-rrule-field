@@ -1,6 +1,7 @@
 <template>
-    <div :class="['m-2 p-2 border border-1 rounded',error?'border-red-600  bg-red-100':'border-gray-300']">
+    <div :class="['m-2 p-2 border border-1 rounded',error?'border-red-600  bg-red-50':'border-gray-300']">
         <strong>{{ translate(0) }}</strong>
+
         <table>
 
             <tr>
@@ -8,7 +9,7 @@
                     <ul>
                         <li v-for="i in [1,2,3,4,5,6,7]">
                             <label :for="'p'+i"><input :id="'p'+i" type="checkbox" v-model="days[i]" @change="setValue" class="checkbox"><span
-                                class="text-sm ml-3 mr-8">{{ i }}</span></label><br>
+                                class="text-sm ml-2 mr-6">{{ i }}</span></label><br>
                         </li>
                     </ul>
                 </td>
@@ -16,7 +17,7 @@
                     <ul>
                         <li v-for="i in [8,9,10,11,12,13,14]">
                             <label :for="'p'+i"><input :id="'p'+i" type="checkbox" v-model="days[i]" @change="setValue" class="checkbox"><span
-                                class="text-sm ml-3 mr-8">{{ i }}</span></label><br>
+                                class="text-sm ml-2 mr-6">{{ i }}</span></label><br>
                         </li>
                     </ul>
                 </td>
@@ -24,7 +25,7 @@
                     <ul>
                         <li v-for="i in [15,16,17,18,19,20,21]">
                             <label :for="'p'+i"><input :id="'p'+i" type="checkbox" v-model="days[i]" @change="setValue" class="checkbox"><span
-                                class="text-sm ml-3 mr-8">{{ i }}</span></label><br>
+                                class="text-sm ml-2 mr-6">{{ i }}</span></label><br>
                         </li>
                     </ul>
                 </td>
@@ -32,7 +33,7 @@
                     <ul>
                         <li v-for="i in [22,23,24,25,26,27,28]">
                             <label :for="'p'+i"><input :id="'p'+i" type="checkbox" v-model="days[i]" @change="setValue" class="checkbox"><span
-                                class="text-sm ml-3 mr-8">{{ i }}</span></label><br>
+                                class="text-sm ml-2 mr-6">{{ i }}</span></label><br>
                         </li>
                     </ul>
                 </td>
@@ -40,7 +41,7 @@
                     <ul>
                         <li v-for="i in [29,30,31]">
                             <label :for="'p'+i"><input :id="'p'+i" type="checkbox" v-model="days[i]" @change="setValue" class="checkbox"><span
-                                class="text-sm ml-3 mr-8">{{ i }}</span></label><br>
+                                class="text-sm ml-2 mr-6">{{ i }}</span></label><br>
                         </li>
                     </ul>
                 </td>
