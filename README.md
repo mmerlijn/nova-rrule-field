@@ -16,6 +16,12 @@ You can install this package in to a Laravel app that uses [Nova](https://nova.l
 composer require mmerlijn/nova-rrule-field
 ```
 
+For Nova <= 4
+
+```bash
+composer require mmerlijn/nova-rrule-field v4.3
+```
+
 For Nova <= 3
 
 ```bash
