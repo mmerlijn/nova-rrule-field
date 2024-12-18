@@ -29,7 +29,7 @@ export default {
         */
         setInitialValue() {
             this.value = this.field.value || 'FREQ=DAILY'
-            console.log(this.value)
+            //console.log(this.value)
         },
         /**
          * Fill the given FormData object with the field's internal value.
