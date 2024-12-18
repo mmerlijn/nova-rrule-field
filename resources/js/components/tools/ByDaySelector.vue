@@ -1,5 +1,5 @@
 <template>
-    <div :class="['m-2 p-2 border border-1 rounded',error?'border-red-600  bg-red-50':'border-gray-300']">
+    <div :class="['m-2 p-2 border border-1 rounded',error?'border-red-600':'border-gray-300']">
         <strong>{{ translate('day') }}</strong><br>
         <table>
             <tr>

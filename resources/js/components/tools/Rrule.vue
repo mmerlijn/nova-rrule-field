@@ -2,7 +2,7 @@
     <div>
         <div class="m-2 p-2 border border-1 rounded border-gray-300">
             <select v-model="frequency" @change="setFrequency"
-                    class="w-full block form-control form-select form-select-bordered mb-3">
+                    class="w-full block form-control form-select form-select-bordered dark:bg-gray-700 dark:text-gray-400 mb-3 rounded px-2">
                 <option v-for="item in dict" :value="item.id">{{ translate(item.id) }}</option>
             </select>
         </div>

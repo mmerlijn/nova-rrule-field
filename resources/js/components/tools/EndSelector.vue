@@ -1,5 +1,5 @@
 <template>
-    <div :class="['m-2 mb-4 p-2 border border-1 rounded',error?'border-red-600  bg-red-50':'border-gray-300']">
+    <div :class="['m-2 mb-4 p-2 border border-1 rounded',error?'border-red-600':'border-gray-300']">
         <div class="flex gap-2 mb-3">
             <button @click.prevent="buttonClick('repeat')" type="button" class="shadow relative bg-primary-500 hover:bg-primary-400 text-white dark:text-gray-900 cursor-pointer rounded text-sm font-bold focus:outline-none focus:ring ring-primary-200 dark:ring-gray-600 inline-flex items-center justify-center h-9 px-3 shadow relative bg-primary-500 hover:bg-primary-400 text-white dark:text-gray-900">
                 {{ translate('repeat') }}

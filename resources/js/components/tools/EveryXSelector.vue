@@ -1,5 +1,5 @@
 <template>
-    <div :class="['m-2 p-2 border border-1 rounded',error?'border-red-600  bg-red-50':'border-gray-300']">
+    <div :class="['m-2 p-2 border border-1 rounded',error?'border-red-600':'border-gray-300']">
         <div class="flex gap-1 items-center mb-3">
             <span class="p-2">{{ translate('every') }}</span>
             <input type="number" min="1" v-model="every" class="form-control form-input form-input-bordered w-16 text-sm pl-3"
